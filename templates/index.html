@@ -35,9 +35,14 @@ button {
 
 <body>
   <h1>Chat App</h1>
+  {% if not loggedIn %} <!-- if not logged in show log in field -->
+  <input id="username" type="text" placeholder="Username" />
+  <button id="login">Login</button>
+  {% else %} <!-- else show posts box -->
   <h3>Posts</h3>
   <input id='message' type="text" placeholder="Whatever you want to say!" />
   <button id='submit'>Submit</button>
+  {% endif %} <!-- end if statement -->
   <div>
     {% for message in messages %}
     <p>[{{message['ts'] }}] - {{ message['message'] }} </p>
