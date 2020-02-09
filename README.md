@@ -1,8 +1,10 @@
 # PythonServerBackend
 
 Creates a local server on localhost:3000 with a chat application that saves
-over MongoDB.
+data over MongoDB.
 
-Need to `pip install pymongo` and `pip install dnspython`
+# Installation
+You need to make sure to have Python3 installed,
+and to `pip install pymongo` and `pip install dnspython`
 
-Run  with `python3 app.py`
+Run the app with `python3 app.py`
