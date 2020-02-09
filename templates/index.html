@@ -12,6 +12,11 @@ h1 {
   color: maroon;
   margin-left: 40px;
 }
+h2 {
+  font-family: cursive; font-size: 15px; font-style: normal; font-variant: small-caps; font-weight: 200;;
+  color: black;
+  margin-left: 40px;
+}
 h3 {
   font-family: cursive; font-size: 20px; font-style: normal; font-variant: small-caps; font-weight: 200;;
   color: maroon;
@@ -22,6 +27,12 @@ input {
 }
 button {
   margin-left: 40px;
+}
+p {
+  margin-left: 40px;
+}
+p2 {
+  font-weight: bold;
 }
 </style>
 
@@ -39,13 +50,16 @@ button {
   <input id="username" type="text" placeholder="Username" />
   <button id="login">Login</button>
   {% else %} <!-- else show posts box -->
+
   <h3>Posts</h3>
   <input id='message' type="text" placeholder="Whatever you want to say!" />
+  <button id='logout'>Log Out</button>
   <button id='submit'>Submit</button>
   {% endif %} <!-- end if statement -->
+  <usernam
   <div>
     {% for message in messages %}
-    <p>[{{message['ts'] }}] - {{ message['message'] }} </p>
+    <p>[{{message['ts'] }}] <strong> {{message['username']}} :</strong> {{ message['message'] }} </p>
     {% endfor %}
   </div>
 

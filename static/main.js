@@ -5,8 +5,14 @@ $(document).ready(function(){
       username:username,
     }).done(function () {
       document.location.reload();
+
   });
 });
+$('#logout').click(function() {
+  $.post('/logout', {}).done(function() {
+    document.location.reload();
+    });
+  })
   $('#submit').click(function(){
     const message = $('#message').val();
     $.post('/message', { //send a post request to the backend

@@ -23,12 +23,17 @@ def login():
     session['username'] = request.form['username']
     return 'success'
 
+@app.route('/logout', methods=['POST'])
+def logout():
+    session.pop('username', None)
+    return 'success'
+
 @app.route('/message', methods=['POST'])
 def new_message():
     print(request.form)
     message = request.form['message']
     now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    new_object = {'message':message, 'ts': now}
+    new_object = {'message':message, 'ts': now, 'username': session['username']}
     messages.insert_one(new_object)
     return 'success'
 
